@@ -30,7 +30,7 @@ ptr = *head;
    return (*head = node);
 
   /* if: the head node in it larger than our node */
-if (node->n < ptr->n || !ptr)
+if (node->n < ptr->n || ptr = NULL)
 {
   node->next = ptr;
   *head = node;
@@ -41,7 +41,7 @@ if (node->n < ptr->n || !ptr)
 while (ptr)
 {
   /* if reached end of list or destination found: set the node*/
-  if (node->n < ptr->next->n || !ptr->next)
+  if (node->n < ptr->next->n || ptr->next == NULL)
     {
       node->next = ptr->next;
       ptr->next = node;
