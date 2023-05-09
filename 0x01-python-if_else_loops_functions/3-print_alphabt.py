@@ -3,7 +3,6 @@
 x = ord('a')
 
 while (chr(x) != chr(ord('z') + 1)):
-    if (chr(x) != chr( ord('q')) and chr(x) != chr(ord('e'))):
+    if (chr(x) != chr(ord('q')) and chr(x) != chr(ord('e'))):
         print("{}".format(chr(x)), end="")
-    
     x += 1
