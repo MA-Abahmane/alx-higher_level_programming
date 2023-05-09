@@ -3,7 +3,7 @@
 def islower(c):
    
     x = ord('a')
-    if (type(c) == int or c = ''):
+    if (type(c) == int or c == ''):
         print("Traceback (most recent call last):")
     
     while (chr(x) != chr(ord('z') + 1)):
