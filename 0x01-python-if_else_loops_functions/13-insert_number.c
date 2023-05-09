@@ -30,7 +30,7 @@ ptr = *head;
    return (*head = node);
 
   /* if: the head node in it larger than our node */
-if (node->n < ptr->n || ptr = NULL)
+if (node->n < ptr->n || ptr == NULL)
 {
   node->next = ptr;
   *head = node;
