@@ -10,6 +10,6 @@ def remove_char_at(str, n):
             continue
         else:
             str_arr += str[x]
-        
+
         x += 1
     return str_arr

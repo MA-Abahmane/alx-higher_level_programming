@@ -9,5 +9,5 @@ def uppercase(str):
             uppered += chr(ord(c) - 32)
         else:
             uppered += c
-    
+
     print("{0}".format(uppered))
