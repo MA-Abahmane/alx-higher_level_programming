@@ -12,7 +12,6 @@
 
 listint_t *insert_node(listint_t **head, int number)
 {
-listint_t *next_node;
 listint_t *node;
 listint_t *ptr;
 int count;
@@ -20,25 +19,33 @@ int count;
   /* creat new node */
 node = malloc(sizeof(listint_t));
 if (node == NULL)
-return (NULL);
+  return (NULL);
 
 node->n = number;
 node->next = NULL;
-  
-  /* find the nodes destination */
-count = 0;
+
 ptr = *head;
-while (count != 4)
-  {
-ptr = ptr->next;
-count++;
+
+  /* if: the head node in it larger than our node */
+if (node->n < ptr->n || ptr == NULL)
+{
+  node->next = ptr;
+  *head = node;
+  return (*head);
 }
 
-  /* instal the node in place */
-next_node = ptr->next;
-    
-ptr->next = node;
-node->next = next_node;
-  
-return (node);
+  /* else: find for the destinations of the node*/
+while (ptr)
+{
+  /* if reached end of list or destination found: set the node*/
+  if (node->n < ptr->next->n || ptr->next == NULL)
+    {
+      node->next = ptr->next;
+      ptr->next = node;
+      return (ptr);
+    }
+    ptr = ptr->next;
+}
+
+return (NULL);
 }
