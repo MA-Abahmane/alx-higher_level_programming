@@ -14,7 +14,6 @@ listint_t *insert_node(listint_t **head, int number)
 {
 listint_t *node;
 listint_t *ptr;
-int count;
 
   /* creat new node */
 node = malloc(sizeof(listint_t));
