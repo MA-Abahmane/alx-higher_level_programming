@@ -25,5 +25,4 @@ if __name__ == '__main__':
     argc = len(sys.argv)
     argv = sys.argv
 
-    def main_calc(argc, argv):
-
+    def main_calc(argc, argv)
