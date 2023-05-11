@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-def main_calc():
+def main_add():
     argc = len(sys.argv)
     argv = sys.argv
 
@@ -10,15 +10,13 @@ def main_calc():
         while (i < argc):
             num = int(argv[i])
             sum += num
-
-        i += 1
+            i += 1
 
         print(sum)
-
     else:
         print("{0}".format(0))
 
 
 if __name__ == '__main__':
     import sys
-    main_calc()
+    main_add()
