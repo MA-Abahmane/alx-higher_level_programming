@@ -15,9 +15,9 @@ def calc_pro(argc, argv):
       print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
     elif (oper == '/'):
       print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
-  else:
-    print("Unknown operator. Available operators: +, -, * and /")
-    sys.exit(1)
+    else:
+      print("Unknown operator. Available operators: +, -, * and /")
+      sys.exit(1)
 
 
         
