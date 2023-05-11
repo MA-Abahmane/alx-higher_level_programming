@@ -3,10 +3,10 @@
 def simple_calc(a, b):
 
   # process / output
-  print(str(a) + " + " + str(b) + " = " + str(add(a, b)))
-  print(str(a) + " - " + str(b) + " = " + str(sub(a, b)))
-  print(str(a) + " * " + str(b) + " = " + str(mul(a, b)))
-  print(str(a) + " / " + str(b) + " = " + str(div(a, b)))
+  print('%d + %d = %d' % (a, b, add(a, b)))
+  print('%d - %d = %d' % (a, b, sub(a, b)))
+  print('%d * %d = %d' % (a, b, mul(a, b)))
+  print('%d / %d = %d' % (a, b, div(a, b)))
 
 # if file not run as main; do not run.
 if __name__ == '__main__':
