@@ -2,17 +2,11 @@
 
 def simple_calc(a, b):
 
-  # process
-  add_result = add(a, b)
-  sub_result = sub(a, b)
-  mul_result = mul(a, b)
-  div_result = div(a, b)
-
-  # output
-  print(str(a) + " + " + str(b) + " = " + str(add_result))
-  print(str(a) + " - " + str(b) + " = " + str(sub_result))
-  print(str(a) + " * " + str(b) + " = " + str(mul_result))
-  print(str(a) + " / " + str(b) + " = " + str(div_result))
+  # process / output
+  print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
+  print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
+  print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
+  print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
 
 # if file not run as main; do not run.
 if __name__ == '__main__':
@@ -20,4 +14,5 @@ if __name__ == '__main__':
   
   a = 10
   b = 5
+
   simple_calc(a, b)
