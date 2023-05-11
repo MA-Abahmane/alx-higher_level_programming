@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-def main_calc():
+def main_calc(argc, argv):
 
     if (argc > 1):
         if (argc == 2):
