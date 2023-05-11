@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 from magic_calculation_102 import add, sub 
 
+def function(a, b)
+    if (a < b):
+        c = add(a, b)
 
-if (a < b):
-    c = add(a, b)
+        for i in range(4, 7):
+            c = add(c, i)
 
-    for i in range(4, 7):
-        c = add(c, i)
+        return c
 
-    return c
-
-else:
-    return (sub(a, b))
+    else:
+        return (sub(a, b))
