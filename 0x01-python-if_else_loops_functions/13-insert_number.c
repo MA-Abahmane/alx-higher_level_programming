@@ -25,6 +25,10 @@ node->next = NULL;
 
 ptr = *head;
 
+  /* if list is empty*/
+ if (*head == NULL)
+   return (*head = node);
+
   /* if: the head node in it larger than our node */
 if (node->n < ptr->n || ptr == NULL)
 {
