@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-simple_calc(a, b):
+def simple_calc(a, b):
 
   # process
   add_result = add(a, b)
