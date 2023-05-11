@@ -6,7 +6,7 @@ def calc_pro(argc, argv):
   oper = argv[2]
   b = int(argv[3])
   
-  if (argc == 4):
+  if (argc == 3):
     if (oper == '+'):
       print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
     elif (oper == '-'):
