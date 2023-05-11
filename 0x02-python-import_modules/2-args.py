@@ -12,8 +12,7 @@ def main_calc(argc, argv):
         while (i < argc):
             argument = argv[i]
             print("{0}: {1}".format(i, argument))
-
-        i += 1
+            i += 1
     else:
         print("{0} arguments.".format(0))
 
