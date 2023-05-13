@@ -9,5 +9,4 @@ def multiple_returns(sentence):
     else:
         fst_char = sentence[0]
 
-    return str_len, fst_char
-
+    return (str_len, fst_char)
