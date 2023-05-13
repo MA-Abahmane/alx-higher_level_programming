@@ -13,14 +13,14 @@ def add_tuple(tuple_a=(), tuple_b=()):
         a = (0, 0)
     elif (a_len == 1):
         a = (tuple_a[0], 0)
-    elif (a_len == 2):
+    elif (a_len >= 2):
         a = (tuple_a[0], tuple_a[1])
 
     if (b_len == 0):
         b = (0, 0)
     elif (b_len == 1):
         b = (tuple_b[0], 0)
-    elif (b_len == 2):
+    elif (b_len >= 2):
         b = (tuple_b[0], tuple_b[1])
 
     # Addition process / return
