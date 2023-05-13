@@ -26,14 +26,14 @@ int is_palindrome(listint_t **head)
     }
 
   /* set array size */
-  int num_arr[arr_size];
+  int num_arry[arr_size];
 
   /* add each number to my array */
   ptr = *head;
   i = 0;
   while (ptr != NULL)
     {
-      num_arr[i] = ptr->n;
+      num_arry[i] = ptr->n;
       ptr = ptr->next;
       i++;
     }
@@ -43,7 +43,7 @@ int is_palindrome(listint_t **head)
   j = arr_size - 1;
   while (i < arr_size - 1 && j >= 0)
     {
-      if (num_arr[i] != num_arr[j])
+      if (num_arry[i] != num_arry[j])
         return (0);
       i++;
       j--;
