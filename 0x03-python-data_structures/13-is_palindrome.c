@@ -11,6 +11,7 @@
 int is_palindrome(listint_t **head)
 {
   int i, j, arr_size;
+  const int size;
   listint_t  *ptr;
 
   /* if list is empty, is palindrom */
@@ -26,7 +27,8 @@ int is_palindrome(listint_t **head)
     }
 
   /* set array size */
-  const int num_arr[arr_size];
+  const int size = arr_size;
+  int num_arr[size];
 
   /* add each number to my array */
   ptr = *head;
