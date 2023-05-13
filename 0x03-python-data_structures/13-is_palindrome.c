@@ -10,8 +10,7 @@
 
 int is_palindrome(listint_t **head)
 {
-  int i, j, arr_size;
-  const int size;
+  int i = 0, j = 0, arr_size = 0;
   listint_t  *ptr;
 
   /* if list is empty, is palindrom */
@@ -27,8 +26,8 @@ int is_palindrome(listint_t **head)
     }
 
   /* set array size */
-  const int size = arr_size;
-  int num_arr[size];
+  int *num_arr = NULL;
+  num_arr = malloc(4 * arr_size);
 
   /* add each number to my array */
   ptr = *head;
@@ -42,14 +41,18 @@ int is_palindrome(listint_t **head)
 
   /* check if my array makes a palindrop */
   i = 0;
-  j = arr_size - 1;
+  j = (arr_size - 1);
   while (i < arr_size - 1 && j >= 0)
     {
       if (num_arr[i] != num_arr[j])
+      {
+        free(num_arr);
         return 0;
+      }
       i++;
       j--;
     }
-  
+
+  free(num_arr);
   return 1;
 }
