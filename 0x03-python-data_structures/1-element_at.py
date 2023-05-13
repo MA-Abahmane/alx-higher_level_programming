@@ -7,9 +7,5 @@ def element_at(my_list, idx):
         return None
     if (idx > (list_len - 1)):
         return None
-    i = 0
-    while (i < list_len):
-        if (i == idx):
-            return my_list[i]
-        i += 1
 
+    return my_list[idx]
