@@ -2,14 +2,18 @@
 
 def print_matrix_integer(matrix=[[]]):
 
-    mother_list = (len(matrix) - 1)
+    mother_list = len(matrix)
     child_list = len(matrix[0])
 
-    for x in mother_list:
-        for y in child_list:
-            if (y == child_list):
-                print("{:d}".format(num), end="")
+    i = 0
+    while (i < mother_list):
+        j = 0
+        while (j < child_list):
+            if (j == (child_list - 1)):
+                print("{:d}".format(matrix[i][j]), end="")
             else:
-                print("{:d}".format(num), end=" ")
+                print("{:d}".format(matrix[i][j]), end=" ")
+            j += 1
         print()
-
+        i += 1
+  
