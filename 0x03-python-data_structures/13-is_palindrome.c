@@ -1,6 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * is_palindrome -  a function that checks if a singly linked list
@@ -16,8 +14,8 @@ int is_palindrome(listint_t **head)
   listint_t  *ptr;
 
   /* if list is empty, is palindrom */
-  if (head == NULL)
-    return 1;
+  if (head == NULL || *head == NULL)
+    return (1);
   
   /* find out how many numbers in the list */
   ptr = *head;
@@ -46,10 +44,10 @@ int is_palindrome(listint_t **head)
   while (i < arr_size - 1 && j >= 0)
     {
       if (num_arr[i] != num_arr[j])
-        return 0;
+        return (0);
       i++;
       j--;
     }
   
-  return 1;
+  return (1);
 }
