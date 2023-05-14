@@ -1,5 +1,34 @@
 #include "lists.h"
 
+
+/**
+ * palin_check -  a function that checks if a singly linked has
+ *   a palindrome in its values using recursion.
+ * @head: pointer to the FIRST node of the list
+ * @tail: pointer to point the LAST node of the list
+ *
+ * Return: 0 if list is NOT palindrome, 1 if palindrome
+ */
+
+int palin_check(listint_t **head, listint_t *tail)
+{
+/* if the end of the list in reached */
+if (tail == NULL)
+return (1);
+
+/* using recursion to go throut the elements of the linked list */
+/* one pointer moves from top to bottop, the other thus the opposit */
+/* and we compare if the numbers are the same while moving */
+if (palin_check(head, tail->next) && (*head)->n == tail->n)
+{
+*head = (*head)->next;
+return (1);
+}
+  
+return 0;
+}
+
+
 /**
  * is_palindrome -  a function that checks if a singly linked list
  *    is a palindrome.
@@ -7,51 +36,16 @@
  *
  * Return: 0 if list is NOT palindrome, 1 if palindrome
  */
+
 int is_palindrome(listint_t **head)
 {
-int i = 0, j = 0, arr_size = 0;
-listint_t  *ptr;
-
+int result;
   /* if list is empty, is palindrom */
-if (head == NULL)
-return 1;
-  
-  /* find out how many numbers in the list */
-ptr = *head;
-while (ptr != NULL)
-{
-arr_size++;
-ptr = ptr->next;
-}
+if (*head == NULL || head == NULL)
+  return (1);
 
-/* set array size */
-int *num_arr = NULL;
-num_arr = malloc(4 * arr_size);
+  /* else check if its palindrom / return thre resulte */
+result = palin_check(head, *head);
 
-/* add each number to my array */
-ptr = *head;
-i = 0;
-while (ptr != NULL)
-{
-num_arr[i] = ptr->n;
-ptr = ptr->next;
-i++;
-}
-
-/* check if my array makes a palindrop */
-i = 0;
-j = (arr_size - 1);
-while (i < arr_size - 1 && j >= 0)
-{
-if (num_arr[i] != num_arr[j])
-{
-free(num_arr);
-return 0;
-}
-i++;
-j--;
-}
-
-free(num_arr);
-return 1;
+return (result);
 }
