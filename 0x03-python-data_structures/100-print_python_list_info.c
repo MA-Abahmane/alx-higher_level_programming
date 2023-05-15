@@ -21,7 +21,7 @@ p_len = PyList_Size(p);
 allocated_ptrs = ((PyListObject *)p)->allocated;
 
 /* output */
-printf("[*] Size of the Python List = %ld", size);
+printf("[*] Size of the Python List = %ld", p_len);
 printf("[*] Allocated = %ld", allocated_ptrs);
 
 /* from list object 'p' get each elements with ptr 'data' with index 'i' */
