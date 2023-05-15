@@ -25,13 +25,12 @@ printf("[*] Size of the Python List = %ld", p_len);
 printf("[*] Allocated = %ld", allocated_ptrs);
 
 /* from list object 'p' get each elements with ptr 'data' with index 'i' */
-/* then get elements type name 'data_type'/print element type and its index */
+/* then get elements type name /print element type and its index */
 for (i = 0; i < p_len; i++)
 {
     
 data = PyList_GET_ITEM(p, i);
-char* data_type = data->ob_type->tp_name;
 
-printf("Element %ld: %s\n", i, data_type);  
+printf("Element %ld: %s\n", i, data->ob_type->tp_name);  
 }
 }
