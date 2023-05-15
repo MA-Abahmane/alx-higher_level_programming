@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <Python.h>
 
 /**
@@ -21,14 +19,13 @@ p_len = PyList_Size(p);
 allocated_ptrs = ((PyListObject *)p)->allocated;
 
 /* output */
-printf("[*] Size of the Python List = %ld", p_len);
-printf("[*] Allocated = %ld", allocated_ptrs);
+printf("[*] Size of the Python List = %ld\n", p_len);
+printf("[*] Allocated = %ld\n", allocated_ptrs);
 
 /* from list object 'p' get each elements with ptr 'data' with index 'i' */
 /* then get elements type name /print element type and its index */
 for (i = 0; i < p_len; i++)
-{
-    
+{ 
 data = PyList_GET_ITEM(p, i);
 
 printf("Element %ld: %s\n", i, data->ob_type->tp_name);  
