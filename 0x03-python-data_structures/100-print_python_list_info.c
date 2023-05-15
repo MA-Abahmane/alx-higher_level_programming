@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "Python.h"
+
+void print_python_list_info(PyObject *p)
+{
+Py_ssize_t i, p_len, allocated_ptrs;
+PyObject *data;
+
+/* get the length of the Pyhton list object p, works like len(p) */
+p_len = PyList_Size(p);
+
+/* get the number on pointer to python list objs that are allocated */
+allocated_ptrs = ((PyList_Size)*p)->allocated_ptr;
+
+/* output */
+print("[*] Size of the Python List = %d", size);
+print("[*] Allocated = %d", allocated_ptrs)
+
+/* from list object 'p' get each elements 'data' with index 'i' */
+/* then get elements type name 'data_type'/print element type and its index */
+for (i = 0; i < p_len; i++)
+{
+    
+    data = PyList_GET_ITEM(p, i);
+    const char* data_type = data->ob_type->tp_name;
+    printf("Element %ld: %s\n", i, data_type);
+    
+}
+}
