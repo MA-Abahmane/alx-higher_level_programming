@@ -18,11 +18,11 @@ PyObject *data;
 p_len = PyList_Size(p);
 
 /* get the number on pointer to python list objs that are allocated */
-allocated_ptrs = ((PyList_Size)*p)->allocated;
+allocated_ptrs = ((PyListObject *)p)->allocated;
 
 /* output */
-print("[*] Size of the Python List = %d", size);
-print("[*] Allocated = %d", allocated_ptrs);
+print("[*] Size of the Python List = %ld", size);
+print("[*] Allocated = %ld", allocated_ptrs);
 
 /* from list object 'p' get each elements with ptr 'data' with index 'i' */
 /* then get elements type name 'data_type'/print element type and its index */
