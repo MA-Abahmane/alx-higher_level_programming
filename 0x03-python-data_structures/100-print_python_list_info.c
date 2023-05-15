@@ -27,7 +27,8 @@ printf("[*] Allocated = %ld\n", allocated_ptrs);
 for (i = 0; i < p_len; i++)
 { 
 data = PyList_GET_ITEM(p, i);
+const char* data_type = data->ob_type->tp_name;
 
-printf("Element %ld: %s\n", i, data->ob_type->tp_name);  
+printf("Element %ld: %s\n", i, data_type);
 }
 }
