@@ -4,12 +4,19 @@
 
 void print_python_list(PyObject *p)
 {
-PyObject *x;
-x = p
+
+if ((!PyBytes_CheckExact(p))
+{
+printf("  [ERROR] Invalid Bytes Object\n");
+return;
+}
+
 }
 
 void print_python_bytes(PyObject *p)
 {
-PyObject *y;
-y = p
+
+if ((!PyList_CheckExact(p))
+return;
+
 }
