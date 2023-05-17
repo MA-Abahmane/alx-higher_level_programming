@@ -10,12 +10,16 @@ def roman_to_int(roman_string):
     n = 0
 
     for c in roman_string:
-        Cval = Rnum[c]
+        # If given character not a roman number
+        if (Rnum.get(c, 0) == 0):
+            return (0)
 
+        Cval = Rnum[c]
+        # if the previous Rnum was less then the current one
         if (prev_n < Cval):
             n -= (2 * prev_n)
-
-        n += Rnum[c]
-        prev_n = n
+        # else; add the number and save a previous number
+        n += Cval
+        prev_n = Cval
 
     return (n)
