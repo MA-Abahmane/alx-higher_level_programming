@@ -10,7 +10,6 @@ if (!PyBytes_CheckExact(p))
 printf("  [ERROR] Invalid Bytes Object\n");
 return;
 }
-
 }
 
 void print_python_bytes(PyObject *p)
@@ -18,5 +17,4 @@ void print_python_bytes(PyObject *p)
 
 if (!PyList_CheckExact(p))
 return;
-
 }
