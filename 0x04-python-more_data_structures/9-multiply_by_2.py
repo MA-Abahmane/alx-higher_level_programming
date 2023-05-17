@@ -1,3 +1,8 @@
 def multiply_by_2(a_dictionary):
+
+    dict_cpy = a_dictionary.copy()
     #get each key/value from dict, then multiply its value
-    return {key: val*2 for key, val in a_dictionary.items()}
+    for key, val in dict_cpy.items():
+        dict_cpy[key] = val*2
+
+    return (dict_cpy)
