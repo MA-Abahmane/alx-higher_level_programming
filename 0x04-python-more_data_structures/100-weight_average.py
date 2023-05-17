@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 
 def weight_average(my_list=[]):
-    if (my_list is None):
-        return None
+    if (not my_list):
+        return 0
 
     divisor = 0
-    for tpl in my_list:
-        divisor += tpl[1]
+    for i, j in my_list:
+        divisor += j
 
     dividend = 0
-    for tpl in my_list:
-        mul = tpl[0] * tpl[1]
-        dividend += mul
+    for x, y in my_list:
+        dividend += x * y
 
     return (dividend/divisor)
