@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 def complex_delete(a_dictionary, value):
-    
+
     lst = list()
     # save all the key to delete in a dict
     for key in a_dictionary:
