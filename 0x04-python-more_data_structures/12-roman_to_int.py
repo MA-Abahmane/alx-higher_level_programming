@@ -10,6 +10,9 @@ def roman_to_int(roman_string):
     n = 0
 
     for c in roman_string:
+        if (Rnum.get(c, 0) == 0):
+            return (0)
+
         Cval = Rnum[c]
 
         if (prev_n < Cval):
