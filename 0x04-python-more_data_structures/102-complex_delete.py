@@ -7,7 +7,7 @@ def complex_delete(a_dictionary, value):
     for key in a_dictionary:
         if (a_dictionary[key] == value):
             lst.append(key)
-    # now delete ech key with containg value
+    # now delete each key with containg value
     for key in lst:
         del a_dictionary[key]
 
