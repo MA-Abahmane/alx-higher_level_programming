@@ -1,13 +1,20 @@
 #include <Python.h>
-#inclide <stdio.h>
-#inclide <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void print_python_list(PyObject *p);
-    PyObject *x;
-    x = p
-    return(0)
+void print_python_list(PyObject *p)
+{
 
-void print_python_bytes(PyObject *p);
-    PyObject *y;
-    y = p
-    return(0)
+if (!PyBytes_CheckExact(p))
+{
+printf("  [ERROR] Invalid Bytes Object\n");
+return;
+}
+}
+
+void print_python_bytes(PyObject *p)
+{
+
+if (!PyList_CheckExact(p))
+return;
+}
