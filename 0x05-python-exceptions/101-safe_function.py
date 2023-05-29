@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
 def safe_function(fct, *args):
-    rzlt = None
+    from sys import stderr as err 
     try:
         rzlt = fct(args[0], args[1])
-    except Exception as ex:
-        print("Exception: {}".format(ex))
-        return (rzlt)
+    except Exception as error:
+        print("Exception: {}".format(error), file=err)
+        return (None)
     else:
         return (rzlt)
