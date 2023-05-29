@@ -2,12 +2,11 @@
 
 def safe_print_list(my_list=[], x=0):
     i = 0
-    count = 0
-    for i in range(0, x):
+    while (i < x):
         try:
-            print("{:d}".format(my_list[i]), end='')
-            count += 1
-        except:
-            continue
+            print("{}".format(my_list[i]), end='')
+            i += 1
+        except Exception:
+            break
     print()
-    return (count)
+    return i
