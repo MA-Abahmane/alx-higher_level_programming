@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 class Square:
-    """ A class Square that defines a square by """
-    def __init__(self, s):
-        self.__size = s
+    """ The class Square """
+    def __init__(self, size):
+        """ The constructor  """
+        self.__size = size
