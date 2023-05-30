@@ -13,7 +13,7 @@ class Square:
             position (tuple): given space indexs
         """
         self.size = size
-        self.positions = position
+        self.position = position
 
     @property
     def size(self):
@@ -33,17 +33,21 @@ class Square:
     @property
     def position(self):
         """ Set position as a private instance attributes """
-        return (self.__positions)
+        return (self.__position)
 
     @position.setter
     def position(self, value):
         """ Check if the value passes is a tuple with 2 digits """
-        if (type(value) != tuple or len(value) != 2):
+        if (type(value) != tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif (value[0] and value[1] < 0 or type(value[0]) and type(value[1]) != int):
+        elif (len(value) != 2):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif (type(value[0]) and type(value[1]) != int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif (value[0] and value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.__positions = value
+            self.__position = value
 
 
     def area(self):
@@ -57,7 +61,7 @@ class Square:
         if (value == 0):
             print()
         else:
-            x, y = self.positions
+            x, y = self.position
             for i in range(y):
                 print()
             for j in range(value):
