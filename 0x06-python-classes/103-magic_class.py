@@ -1,14 +1,17 @@
 #!/usr/bin/python
 """ Class MagicClass """
-import math.pi
+import math
 
 
 class MagicClass:
 
     def __init__(self, radius=0):
-      """ Disassembly of __init__: """
-      self.__radius = 0
+      """ Disassembly of __init__: 
 
+      Args:
+         radius (int): given radius value
+      """
+      self.__radius = 0
       if (type(radius) is not int and type(radius) is not float):
           raise TypeError('radius must be a number')
       else:
