@@ -20,7 +20,6 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """ check if size is a digit and in not a negative one """
         if (type(value) != int):
             raise ValueError("size must be an integer")
         elif (value < 0):
