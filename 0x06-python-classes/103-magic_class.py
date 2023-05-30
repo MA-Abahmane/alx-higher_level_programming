@@ -7,8 +7,8 @@ class MagicClass:
     """ inside MagicClass """
 
     def __init__(self, radius=0):
-        """ Disassembly of __init__: 
- 
+        """ Disassembly of __init__:
+
         Args:
             radius (int): given radius value"""
 
