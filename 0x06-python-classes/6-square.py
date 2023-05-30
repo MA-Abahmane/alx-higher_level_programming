@@ -60,6 +60,6 @@ class Square:
             x, y = self.positions
             for i in range(y):
                 print()
-            for j in range(0, value):
+            for j in range(value):
                 print(x * ' ', end="")
                 print(value * '#')
