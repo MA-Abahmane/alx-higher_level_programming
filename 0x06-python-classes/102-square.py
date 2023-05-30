@@ -5,7 +5,6 @@
 class Square:
     """inside class Square"""
 
-
     def __init__(self, size=0):
         """initialise squares.
 
@@ -36,7 +35,7 @@ class Square:
     """ is equal """
     def __eq__(self, other):
         return self.area() == other.area()
-    
+
     """ is not equal """
     def __ne__(self, other):
         return self.area() != other.area()
@@ -56,4 +55,3 @@ class Square:
     """ is greater or equal """
     def __ge__(self, other):
         return self.area() >= other.area()
-
