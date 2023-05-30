@@ -11,6 +11,7 @@ class MagicClass:
       Args:
          radius (int): given radius value
       """
+      self.radius = radius
       self.__radius = 0
 
     @property
