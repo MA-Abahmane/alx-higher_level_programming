@@ -9,7 +9,8 @@ class Square:
         """initialise squares.
 
         Args:
-            size (int): square size.
+            size (int): ssquare size.
+            position (tuple): given space indexs
         """
         self.size = size
         self.positions = position
@@ -36,7 +37,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-      """ Check if the value passes is a tuple with 2 digits """
+        """ Check if the value passes is a tuple with 2 digits """
         if (type(value) != tuple or len(value) != 2):
             raise ValueError("position must be a tuple of 2 positive integers")
         elif (value[0] and value[1] < 0 or type(value[0]) and type(value[1]) != int):
