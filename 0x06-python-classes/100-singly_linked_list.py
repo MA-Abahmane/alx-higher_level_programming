@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""The class Square"""
+"""The class Node"""
 
 
 class Node:
@@ -41,14 +41,15 @@ class Node:
         else:
             self.__next_node = value
 
-
-
     def my_print(self):
         """ printing function """
         value = self.size
-    
+
+""" The class SinglyLinkedList """
 
 
 class SinglyLinkedList:
+    """ Inside SinglyLinkedList """
+
     def __init__(self):
         self.head = None
