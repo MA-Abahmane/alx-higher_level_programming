@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+"""The class Square"""
+
 class Square:
-    """The class Square"""
+    """The constructor"""
     
     def __init__(self, size):
-        """The constructor"""
         self.__size = size
