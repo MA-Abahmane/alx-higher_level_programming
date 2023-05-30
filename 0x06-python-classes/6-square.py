@@ -25,7 +25,7 @@ class Square:
         """ Check if the value passes is a positive digit """
         if (type(value) != int):
             raise TypeError("size must be an integer")
-        elif (value < 0):
+        if (value < 0):
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
@@ -53,13 +53,13 @@ class Square:
     def my_print(self):
         """ printing function """
         value = self.size
-        x, y = self.positions
 
         if (value == 0):
             print()
-
-        for i in range(y):
-            print()
-        for j in range(0, value):
-            print(x * ' ', end="")
-            print(value * '#')
+        else:
+            x, y = self.positions
+            for i in range(y):
+                print()
+            for j in range(0, value):
+                print(x * ' ', end="")
+                print(value * '#')
