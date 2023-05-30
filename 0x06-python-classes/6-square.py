@@ -52,7 +52,7 @@ class Square:
         return (self.__size ** 2)
 
     def my_print(self):
-        """ printing function """
+        """ Printing function """
         value = self.size
 
         if (value == 0):
