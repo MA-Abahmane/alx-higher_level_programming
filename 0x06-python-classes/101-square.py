@@ -6,9 +6,8 @@ class Square:
     """inside class Square"""
 
     def __str__(self):
-        """ My print function """
-        return self.my_string()[:-1]
-
+        """ My class print"""
+        return self.my_string()[0: -1]
 
     def __init__(self, size=0, position=(0, 0)):
         """initialise squares.
@@ -74,7 +73,7 @@ class Square:
                 str += '#'
             str += '\n'
         return (str)
-    
+
     def my_print(self):
-        """ printing function """
+        """ string printing function """
         print(self.my_string(), end='')
