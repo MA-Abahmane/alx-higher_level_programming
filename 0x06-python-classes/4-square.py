@@ -9,7 +9,7 @@ class Square:
         """ initialise squares
 
         Args:
-        size (int): square suze.
+            size (int): square suze.
         """
         self.size = size
 
@@ -20,7 +20,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-          """ check if size is a digit and in not a negative one """
+        """ check if size is a digit and in not a negative one """
         if (type(value) != int):
             raise ValueError("size must be an integer")
         elif (value < 0):
