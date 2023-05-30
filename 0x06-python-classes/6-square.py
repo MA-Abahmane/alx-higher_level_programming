@@ -38,13 +38,12 @@ class Square:
     @position.setter
     def position(self, value):
         """ Check if the value passes is a tuple with 2 digits """
-        if (type(value) != tuple or len(value) != 2):
+        if (type(value) != tuple or type(value[0]) and type(value[1]) != int):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif (type(value[0]) and type(value[1]) != int or value[0] and value[1] < 0):
+        elif (len(value) != 2 or value[0] and value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
-
 
     def area(self):
         """ Area calculator """
