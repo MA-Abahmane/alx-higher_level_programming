@@ -18,7 +18,7 @@ Test-1 adding 2 integers:
 
 Test-2 adding 2 floats:
 
-    >>> add_integer(2,50, 2,50)
+    >>> add_integer(2.50, 2.50)
     4
 
 
@@ -43,7 +43,7 @@ Test-5 sending in 1 digit:
 Test-6 adding negative and positive:
 
     >>> add_integer(-10, 5)
-    5
+    -5
 
 
 Test-7 sending in a string and digit:
