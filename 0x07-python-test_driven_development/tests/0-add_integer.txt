@@ -4,10 +4,10 @@
 file to insure it work as expected in every given 
 situation
 
- >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer = __import__('0-add_integer').add_integer
 
 
-- Let start testing:
+Let start testing:
 
 
 Test-1 adding 2 integers:
