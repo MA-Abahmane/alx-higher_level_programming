@@ -99,6 +99,7 @@ test-14 sending in nothing:
 
     >>> add_integer()
     Traceback (most recent call last):
+    ...
     TypeError: add_integer() missing 1 required positional argument: 'a'
 
 
@@ -106,4 +107,5 @@ test-15 sending in more than 2 digits:
 
     >>> add_integer(1, 2, 3)
     Traceback (most recent call last):
+    ...
     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
