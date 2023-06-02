@@ -8,7 +8,6 @@ def print_square(size):
 
     Args:
         size (int): given is the size length of the square
-
     """
 
     if (type(size) not in [int]):
