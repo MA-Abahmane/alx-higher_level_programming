@@ -1,0 +1,83 @@
+- Welcome to the '3-say_my_name.txt' testing ground -
+
+- This file containst test for the '3-say_my_name' 
+file to insure it work as expected in every given 
+situation
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+Let start testing:
+
+
+Test-1 normal mode:
+
+    >>> say_my_name("Mohamed", "Amine")
+    My name is Mohamed Amine
+
+
+Test-2 just first name:
+
+    >>> say_my_name("Mohamed")
+    My name is Mohamed 
+
+
+Test-3 first name Null:
+
+    >>> say_my_name(None, "Amine")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+
+Test-4 last name Null:
+
+    >>> say_my_name("Mohamed", None)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+
+Test-5 both names Null:
+
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+
+Test-6 caracters:
+
+    >>> say_my_name('M', 'A')
+    My name is M A
+
+
+Test-7 numbers:
+
+    >>> say_my_name(-1, 5.55)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+
+Test-8 tuple:
+
+    >>> say_my_name(("A", "F"))
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+
+Test-9 empty strings:
+
+    >>> say_my_name("", "")
+    My name is  
+
+
+Test-10 nothing given:
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+
+Test-11 more than 2 strings:
+
+    >>> say_my_name("Mohamed", "Amine", "Ali")
+    Traceback (most recent call last):
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
