@@ -1,6 +1,6 @@
-- Welcome to the '3-say_my_name.txt' testing ground -
+- Welcome to the '4-print_square' testing ground -
 
-- This file containst test for the '3-say_my_name' 
+- This file containst test for the '4-print_square' 
 file to insure it work as expected in every given 
 situation
 

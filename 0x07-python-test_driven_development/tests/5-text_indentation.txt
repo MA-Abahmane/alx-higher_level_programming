@@ -1,0 +1,118 @@
+- Welcome to the '5-text_indentation' testing ground -
+
+- This file containst test for the '5-text_indentation' 
+file to insure it work as expected in every given 
+situation
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+Let start testing:
+
+
+Test-1 normal mode:
+
+    >>> text = "Hello. World"
+    >>> text_indentation(text)
+    Hello.
+    <BLANKLINE>
+    World
+
+
+Test-2 normal mode 2:
+
+    >>> text = "Good day dear reader. How are you doing?Hope you are: well"
+    >>> text_indentation(text)
+    Good day dear reader.
+    <BLANKLINE>
+    How are you doing?
+    <BLANKLINE>
+    Hope you are:
+    <BLANKLINE>
+    well
+
+
+Test-3 string of indent characters:
+
+    >>> text = ".:?"
+    >>> text_indentation(text)
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+
+Test-4 More testing:
+
+    >>> text = "1. 2: 3? 5"
+    >>> text_indentation(text)
+    1.
+    <BLANKLINE>
+    2:
+    <BLANKLINE>
+    3?
+    <BLANKLINE>
+    5
+
+
+Test-5 empty string:
+
+    >>> text = ""
+    >>> text_indentation(text)
+
+
+
+Test-6 1 indent characters:
+
+    >>> text = '.'
+    >>> text_indentation(text)
+    .
+    <BLANKLINE>
+
+
+Test-7 free string:
+
+    >>> text = "Hi my name is AAAAH"
+    >>> text_indentation(text)
+    Hi my name is AAAAH
+
+
+Test-8 with nums:
+
+    >>> text = -1.99
+    >>> text_indentation(text)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+
+Test-9 strings:
+
+    >>> text_indentation("The more I fight", "the stronger I become")
+    Traceback (most recent call last):
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+
+Test-10 With tuple:
+
+    >>> text = ("1", "2")
+    >>> text_indentation(text)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+
+Test-11 With list:
+
+    >>> text = ["Hello"]
+    >>> text_indentation(text)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+
+Test-12 with nothing:
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
