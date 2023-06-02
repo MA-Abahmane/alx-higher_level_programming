@@ -1,0 +1,103 @@
+- Welcome to the '3-say_my_name.txt' testing ground -
+
+- This file containst test for the '3-say_my_name' 
+file to insure it work as expected in every given 
+situation
+
+    >>> print_square = __import__('4-print_square').print_square
+
+
+Let start testing:
+
+
+Test-1 normal mode:
+
+    >>> print_square(1)
+    #
+
+Test-1 normal mode 2:
+
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+
+
+Test-1 float size:
+
+    >>> print_square(5.22)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+
+Test-1 negative float size:
+
+    >>> print_square(-99.99)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+
+Test-1 size == 0:
+
+    >>> print_square(0)
+
+    
+
+Test-1 size < 0:
+
+    >>> print_square(-1)
+    ValueError: size must be >= 0
+
+
+Test-1 string:
+
+    >>> print_square("Hello")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+
+Test-1 list:
+
+    >>> print_square([1, 2])
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+
+Test-1 tuple:
+
+    >>> print_square((2, 2))
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+
+Test-1 calculation size:
+
+    >>> print_square(100 - 95)
+    #####
+    #####
+    #####
+    #####
+    #####
+
+
+Test-1 No size:
+
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+
+Test-1 Null size:
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    
