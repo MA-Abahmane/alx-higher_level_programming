@@ -68,4 +68,7 @@ class TestMaster(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer({1:100}, {1:200})
 
+if (__name__ == '__main__'):
+    unittest.main()
+
 
