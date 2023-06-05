@@ -61,7 +61,7 @@ class Rectangle:
     def perimeter(self):
         """ returns the rectangle perimeter """
         if (self.__height == 0 or self.__width == 0):
-            return(0)
+            return (0)
         return ((self.__height + self.__width) * 2)
 
     def area(self):
@@ -100,4 +100,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """  returns a new Rectangle instance with width == height == size """
+        if (size < 0):
+            return Rectangle(0, 0)
         return Rectangle(size, size)
