@@ -5,6 +5,8 @@
 class Rectangle:
     """ inside the class Rectangle"""
 
+    number_of_instances = 0
+
     def __str__(self):
         """ return string representation of an object """
         return (self.my_str()[:-1])
@@ -17,11 +19,13 @@ class Rectangle:
     def __del__(self):
         """ print a delete message """
         print('Bye rectangle...')
+        Rectangle.number_of_instances -= 1
 
     def __init__(self, width=0, height=0):
         """ Our constructor """
         self.height = height
         self.width = width
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -53,7 +57,6 @@ class Rectangle:
 
         self.__height = value
 
-
     def perimeter(self):
         """ returns the rectangle perimeter """
         if (self.__height == 0 or self.__width == 0):
@@ -64,10 +67,11 @@ class Rectangle:
         """ returns the rectangle area """
         return (self.__height * self.__width)
 
-
     def my_str(self):
         """ string building method """
         str = ""
+        if (self.__height == 0 or self.__width == 0):
+            return(0)
         for i in range(self.height):
             for j in range(self.width):
                 str += ('#')
@@ -76,4 +80,5 @@ class Rectangle:
 
     def printer(self):
         """ string printing function """
+        print()
         print(self.my_str(), end='')
