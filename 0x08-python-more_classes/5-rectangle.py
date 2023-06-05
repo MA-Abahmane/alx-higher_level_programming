@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ class Rectangle that defines a rectangle by given indexs """
 
+
 class Rectangle:
     """ inside the class Rectangle"""
 
