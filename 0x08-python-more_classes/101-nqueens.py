@@ -12,18 +12,18 @@ if __name__ == '__main__':
     Entry point of the program.
     """
 
-    from sys import argv
+    import sys
 
 
-    if (len(argv) != 2):
+    if (len(sys.argv) != 2):
         print('Usage: nqueens N')
         exit(1)
 
-    if (type(argv[1]) not in [int]):
+    if (type(sys.argv[1]) not in [int]):
         print('N must be a number')
         exit(1)
 
-    n = int(argv[1])
+    n = int(sys.argv[1])
 
     if (n < 4):
         print('N must be at least 4')
