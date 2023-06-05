@@ -3,6 +3,7 @@
 
 
 if __name__ == '__main__':
+    """ inside main """
 
     from sys import argv
 
