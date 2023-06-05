@@ -40,3 +40,5 @@ printf(" type: compact ascii\n");
 str = PyUnicode_AsWideCharString(p, &len);
 printf("  length: %d\n", len);
 printf("  value: %s\n", str);
+
+}
