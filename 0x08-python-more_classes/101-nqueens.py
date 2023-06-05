@@ -1,21 +1,16 @@
 #!/usr/bin/python3
-""" 
+"""
 The N queens puzzle:
 
-is the challenge of placing N non-attacking queens on an N×N 
+is the challenge of placing N non-attacking queens on an N×N
 chessboard. Write a program that solves the N queens problem.
 """
 
 import sys
 
 
-def func():
-    """ a adding function """
-    return 1 + 1
-
-
 if __name__ == "__main__":
-    """ 
+    """
     Entry point of the program.
     """
 
@@ -32,8 +27,3 @@ if __name__ == "__main__":
     if (n < 4):
         print('N must be at least 4')
         sys.exit(1)
-
-    nm = func()
-
-
-
