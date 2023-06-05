@@ -66,7 +66,7 @@ class Rectangle:
                 str += ('#')
             str += ('\n')
         return (str)
-    
+
     def printer(self):
         """ string printing function """
         print(self.my_str(), end='')
