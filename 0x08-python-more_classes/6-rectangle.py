@@ -71,7 +71,7 @@ class Rectangle:
         """ string building method """
         str = ""
         if (self.__height == 0 or self.__width == 0):
-            return(0)
+            return ('')
         for i in range(self.height):
             for j in range(self.width):
                 str += ('#')
