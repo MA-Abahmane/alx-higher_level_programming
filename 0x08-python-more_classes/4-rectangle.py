@@ -49,7 +49,6 @@ class Rectangle:
 
         self.__height = value
 
-
     def perimeter(self):
         """ returns the rectangle perimeter """
         if (self.__height == 0 or self.__width == 0):
@@ -60,10 +59,11 @@ class Rectangle:
         """ returns the rectangle area """
         return (self.__height * self.__width)
 
-
     def my_str(self):
         """ string building method """
         str = ""
+        if (self.__height == 0 or self.__width == 0):
+            return(0)
         for i in range(self.height):
             for j in range(self.width):
                 str += ('#')
