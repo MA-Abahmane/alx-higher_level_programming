@@ -30,7 +30,6 @@ class Rectangle:
         """ return the private atributes value """
         return (self.__height)
 
-
     @height.setter
     def height(self, value):
         """ set the private atributes value """
