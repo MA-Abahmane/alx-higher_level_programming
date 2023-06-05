@@ -2,7 +2,7 @@
 """ class Rectangle that defines a rectangle by given indexs """
 
 
-class Rectangle():
+class Rectangle:
     """ inside the class Rectangle"""
 
     number_of_instances = 0
@@ -24,8 +24,8 @@ class Rectangle():
 
     def __init__(self, width=0, height=0):
         """ Our constructor """
-        self.width = width
         self.height = height
+        self.width = width
         Rectangle.number_of_instances += 1
 
     @property
@@ -61,7 +61,7 @@ class Rectangle():
     def perimeter(self):
         """ returns the rectangle perimeter """
         if (self.__height == 0 or self.__width == 0):
-            return (0)
+            return(0)
         return ((self.__height + self.__width) * 2)
 
     def area(self):
@@ -71,8 +71,6 @@ class Rectangle():
     def my_str(self):
         """ string building method """
         strn = ""
-        if (self.__height == 0 or self.__width == 0):
-            return ('')
         for i in range(self.height):
             for j in range(self.width):
                 try:
