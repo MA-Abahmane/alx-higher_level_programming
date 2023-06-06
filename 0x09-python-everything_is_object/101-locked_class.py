@@ -10,6 +10,7 @@ class LockedClass:
     names_allowed = ['first_name']
     __slots__ = names_allowed
 
+
 """
 [!] By specifying __slots__, you limit the class to only
 allow attributes with the names provided in the list
