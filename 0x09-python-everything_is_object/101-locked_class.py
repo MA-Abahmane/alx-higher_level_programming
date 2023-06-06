@@ -15,3 +15,5 @@ class LockedClass:
 
         if name not in self.names_allowed:
             print('[AttributeError] \'LockedClass\' object has no attribute \'last_name\'')
+        else:
+            pass
