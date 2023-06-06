@@ -7,13 +7,10 @@ Write a function magic_string() that returns a string
 
 class LockedClass:
     """ class contains a function returning a string """
-
     names_allowed = ['first_name']
+    __slots__ = names_allowed
 
-    def __setattr__(self, name , value):
-        """ returns a string “BestSchool” n times the number of the iteration """
-
-        if name not in self.names_allowed:
-            print('[AttributeError] \'LockedClass\' object has no attribute \'last_name\'')
-        else:
-            pass
+"""
+[!] By specifying __slots__, you limit the class to only 
+allow attributes with the names provided in the list
+"""
