@@ -4,11 +4,11 @@
 
 def say_my_name(first_name, last_name=""):
     """ The function is given a first/last name to print
-    
+
     Args:
         first_name (str): given first name
         last_name (str): given last name
-        
+
     Returns:
         My name is (first/last name) """
 

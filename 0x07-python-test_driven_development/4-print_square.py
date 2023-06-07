@@ -3,7 +3,7 @@
 
 
 def print_square(size):
-    """ The function that prints a square of '#' with 
+    """ The function that prints a square of '#' with
     a given size
 
     Args:

@@ -3,11 +3,11 @@
 
 
 def add_integer(a, b=98):
-    """ This function takes in 2 digits and returns their sum 
+    """ This function takes in 2 digits and returns their sum
 
     Args:
         a (int): first number
-        b (int): second number 
+        b (int): second number
     Returns:
         int: The sum of a and b """
 

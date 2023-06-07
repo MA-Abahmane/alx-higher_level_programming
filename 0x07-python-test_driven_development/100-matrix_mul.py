@@ -20,10 +20,9 @@ def matrix_mul(m_a, m_b):
         raise TypeError('m_b must be a list')
 
     if (m_a == [] or m_a == [[]]):
-        raise ValueError ('m_a can\'t be empty')
+        raise ValueError('m_a can\'t be empty')
     if (m_b == [] or m_b == [[]]):
-        raise ValueError ('m_b can\'t be empty')
-
+        raise ValueError('m_b can\'t be empty')
 
     for lst in (m_a):
         if (type(lst) not in [list]):
@@ -51,10 +50,8 @@ def matrix_mul(m_a, m_b):
         if (len(lst) != size_b):
             raise TypeError('each row of m_b must be of the same size')
 
-
     if (len(m_a[0]) != len(m_b)):
         raise ValueError('m_a and m_b can\'t be multiplied')
-
 
     invrted_b = []
     """ Convert m_bs columns to rows:  """
@@ -64,10 +61,9 @@ def matrix_mul(m_a, m_b):
         lst = 0
         while (lst < len(m_b)):
             rw.append(m_b[lst][i])
-            lst+=1
+            lst += 1
         invrted_b.append(rw)
-        i+=1
-
+        i += 1
 
     new_matrix = []
     """ Matrix multiplication process  """

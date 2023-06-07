@@ -11,7 +11,7 @@ def text_indentation(text):
     """
     if (isinstance(text, str) is False):
         raise TypeError('text must be a string')
-    
+
     char_list = ['.', '?', ':']
 
     chars = list(text)

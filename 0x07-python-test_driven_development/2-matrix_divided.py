@@ -4,11 +4,11 @@
 
 def matrix_divided(matrix, div):
     """ The matrix function is given a 2D list and a divisor
-    
+
     Args:
         matrix (2D list): given 2D list
         div (int): given divisor
-        
+
     Returns:
         2D matix: The new list after division """
 
@@ -17,7 +17,7 @@ def matrix_divided(matrix, div):
 
     if (type(matrix) not in [list] or matrix == []):
         raise TypeError(err_mess)
-    
+
     if (type(div) not in [int, float]):
         raise TypeError('div must be a number')
     if (div == 0):
@@ -35,6 +35,5 @@ def matrix_divided(matrix, div):
         for i in lst:
             if (type(i) not in [int, float]):
                 raise TypeError(err_mess)
-
 
     return [[round(i / div, 2) for i in lst]for lst in matrix]
