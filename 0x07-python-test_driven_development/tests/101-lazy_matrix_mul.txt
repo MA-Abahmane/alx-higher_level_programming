@@ -53,5 +53,27 @@ Test-1 normal mode:
 
     >>> print(lazy_matrix_mul())
     Traceback (most recent call last):
-    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 
+    TypeError: lazy_matrix_mul() missing 2 required positional arguments:
 
+
+    >>> print(lazy_matrix_mul([[5, 6], [7, 8]], [[]]))
+    Traceback (most recent call last):
+    ValueError: shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
+
+
+    >>> print(lazy_matrix_mul([[1, 2]], [3, 4]))
+    [11]
+
+
+    >>> print(lazy_matrix_mul([1, 2], [3, 4]))
+    11
+
+
+    >>> m_a = [
+    ... [1, 2],
+    ... [3, 4, 5]
+    ... ]
+    >>> m_b = m_a
+    >>> print(lazy_matrix_mul(m_a, m_b))
+    Traceback (most recent call last):
+    ValueError: setting an array element with a sequence.
