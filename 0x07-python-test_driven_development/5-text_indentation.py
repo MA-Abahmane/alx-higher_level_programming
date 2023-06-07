@@ -13,8 +13,6 @@ def text_indentation(text):
         raise TypeError('text must be a string')
 
     char_list = ['.', '?', ':']
-
-    text.replace('\n', ' ')
     """
     split the lines of text by replacing
     eachcharacter with itseld and 2 lines
