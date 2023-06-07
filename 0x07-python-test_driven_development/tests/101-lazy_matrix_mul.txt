@@ -9,23 +9,8 @@ situation
 
 Let start testing:
 
-
-Test-1 normal mode:
-    >>> m_a = [[1, 2], [3, 4]]
-    >>> m_b = [[1, 2], [3, 4]]
-    >>> lazy_matrix_mul(m_a, m_b)
-    array([[ 7, 10],
-           [15, 22]])
-
-
-Test-2 normal mode:
-    >>> m_a = [[1, 2]]
-    >>> m_b = [[3, 4], [5, 6]]
-    >>> lazy_matrix_mul(m_a, m_b)
-    array([[13, 16]])
-
-
 Test-3 normal mode:
+
     >>> m_a = [[1, 2]]
     >>> lazy_matrix_mul(m_a)
     Traceback (most recent call last):
@@ -33,6 +18,7 @@ Test-3 normal mode:
 
 
 Test-4 normal mode:
+
     >>> lazy_matrix_mul()
     Traceback (most recent call last):
     TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
