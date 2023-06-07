@@ -1,44 +1,36 @@
 #include <stdio.h>
-#include "Python.h"
+#include <string.h>
+#include <Python.h>
 
+void print_python_string(PyObject *p) {
+    unsigned int len;
+    const char *str;
 
-void print_python_string(PyObject *p)
-{
+    /* Flush the standard output */
+    fflush(stdout);
 
-unsigned int len;
-char *str;
+    printf("[.] string object info\n");
 
-/* Flush the standard output */
-fflush(stdout);
+    /* If p is not a valid string */
+    if (!PyUnicode_Check(p)) {
+        printf("  [ERROR] Invalid String Object\n");
+        return;
+    }
 
+    /* retrieving the length of the string */
+    len = PyUnicode_GET_LENGTH(p);
 
-printf("[.] string object info\n");
+    /* Check if the string is a ASCII compact string */
+    /* range (0, 127) */
+    if (!PyUnicode_IS_COMPACT_ASCII(p)) {
+        printf("  type: compact unicode object\n");
+    }
+    else {
+        printf("  type: compact ascii\n");
+    }
 
-/* If p is not a valid string */
-if (strcmp(p->ob_type->tp_name, "str") != 0)
-{
-printf("  [ERROR] Invalid String Object\n");
-return;
-}
-
-/* retreaving the length of the string */
-len = ((PyASCIIObject*)(p))->length;
-
-/* Check if the string is a ASCII compact string */
-/* range (0, 127) */
-if (!PyUnicode_IS_COMPACT_ASCII(p))
-{
-printf(" type: compact unicode object\n");
-}
-else
-{
-printf(" type: compact ascii\n");
-}
-
-/* get the string value by converting it to a wide */
-/* character string in case of special chars ex:(在, щ) */
-str = PyUnicode_AsWideCharString(p, &len);
-printf("  length: %d\n", len);
-printf("  value: %s\n", str);
-
+    /* get the string value */
+    str = PyUnicode_AsUTF8(p);
+    printf("  length: %u\n", len);
+    printf("  value: %s\n", str);
 }
