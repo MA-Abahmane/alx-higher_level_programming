@@ -9,4 +9,5 @@ import numpy as npy
 def lazy_matrix_mul(m_a, m_b):
     """ Yup, this is the one """
 
-    return (npy.matmul(m_a, m_b))
+    result = npy.matmul(m_a, m_b)
+    return (result)
