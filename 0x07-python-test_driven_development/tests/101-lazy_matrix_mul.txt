@@ -1,63 +1,57 @@
-``lazy_matrix_mul(...)`` returns a new matrix representing the multiplication
-of ``m_a`` by ``m_b``.
+- Welcome to the '101-lazy_matrix_mul' testing ground
 
-::
+- This file containst test for the '101-lazy_matrix_mul' 
+file to insure it work as expected in every given 
+situation
 
     >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
-    >>> m_a = [
-    ... [1, 2],
-    ... [3, 4],
-    ... ]
-    >>> m_b = m_a
-    >>> print(lazy_matrix_mul(m_a, m_b))
+
+
+Let start testing:
+
+
+Test-1 normal mode:
+
+    >>> a = [ [1, 2], [3, 4] ]
+    >>> b = [ [1, 2], [3, 4] ]
+    >>> lazy_matrix_mul(a, b)
     [[ 7 10]
      [15 22]]
 
-::
 
-    >>> m_a = [[1, 2]]
-    >>> m_b = [
-    ... [3, 4],
-    ... [5, 6]
-    ... ]
-    >>> print(lazy_matrix_mul(m_a, m_b))
-    [[13 16]]
+    >>> a = [ [1, 2] ]
+    >>> b = [ [3, 4], [5, 6] ]
+    >>> lazy_matrix_mul(a, b)
+    [[13, 16]]
 
-::
 
-    >>> m_a = [
-    ... [1, 2],
-    ... [3, 4, 5]
-    ... ]
-    >>> m_b = [
-    ... [1, 2],
-    ... [3, 4]
-    ... ]
-    >>> print(lazy_matrix_mul(m_a, m_b))
+    >>> a = [  [1, 2, 3] ]
+    >>> b = [ [4, 5, 6], [7, 8, 9], [10, 11, 12] ]
+    >>> lazy_matrix_mul(a, b)
+    [[48, 54, 60]]
+
+
+    >>> print(lazy_matrix_mul("hello", [[1, 2]]))
     Traceback (most recent call last):
-    ValueError: setting an array element with a sequence.
+    ValueError: Scalar operands are not allowed, use '*' instead
 
-::
 
-    >>> m_a = [
-    ... [1, 2],
-    ... [3, 4]
-    ... ]
-    >>> m_b = [
-    ... [1, 2],
-    ... [3, 4, 5]
-    ... ]
-    >>> print(lazy_matrix_mul(m_a, m_b))
+    >>> print(lazy_matrix_mul([[1, 2]], "hello"))
     Traceback (most recent call last):
-    ValueError: setting an array element with a sequence.
+    ValueError: Scalar operands are not allowed, use '*' instead
 
-::
 
-    >>> m_a = [
-    ... [1, 2],
-    ... [3, 4, 5]
-    ... ]
-    >>> m_b = m_a
-    >>> print(lazy_matrix_mul(m_a, m_b))
+    >>> print(lazy_matrix_mul(None, None))
     Traceback (most recent call last):
-    ValueError: setting an array element with a sequence.
+    TypeError: Object arrays are not currently supported
+
+
+    >>> print(lazy_matrix_mul(m_a))
+    Traceback (most recent call last):
+    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+
+    >>> print(lazy_matrix_mul())
+    Traceback (most recent call last):
+    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 
+
