@@ -5,6 +5,9 @@
 Rectangle = __import__('9-rectangle').Rectangle
 
 
+""" Class Square """
+
+
 class Square(Rectangle):
     """ Inside class Square that inherits  from class Rectangle """
 
