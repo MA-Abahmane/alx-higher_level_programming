@@ -22,8 +22,10 @@ class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
         """ constructor """
-        self.integer_validator("width", self.__width)
-        self.integer_validator("height", self.__height)
+        # check is given variable are digits
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
 
+        # if digits; set variables
         self.__width = width
         self.__height = height
