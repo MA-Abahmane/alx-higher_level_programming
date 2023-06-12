@@ -6,7 +6,7 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """ Inside class Square that inherits  from class Rectangle """
+    """ Inside class Square that inherits class Rectangle """
 
     def __init__(self, size):
         """ square constructor """
@@ -15,5 +15,5 @@ class Square(Rectangle):
         
     def __str__(self):
         """ Printing function """
-        return ("[Square] " + str(self.__size) + "/" + str(self.__size)
+        return ("[Square] " + str(self.__size) + "/" + str(self.__size))
         
