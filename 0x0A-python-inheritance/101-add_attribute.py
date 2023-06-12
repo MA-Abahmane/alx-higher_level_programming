@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" a function that adds a new attribute to an object if it’s possible: 
+""" a function that adds a new attribute to an object if it’s possible:
 """
 
 
@@ -20,4 +20,3 @@ def add_attribute(obj, name, value):
 """
 the __dict__ attribute is a dictionary that stores the attributes
 """
-
