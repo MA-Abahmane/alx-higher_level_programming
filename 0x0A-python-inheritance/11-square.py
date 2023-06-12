@@ -1,15 +1,8 @@
 #!/usr/bin/python3
-"""
-more class base
-"""
+""" more class base """
 
 
 Rectangle = __import__('9-rectangle').Rectangle
-
-
-"""
-Square class
-"""
 
 
 class Square(Rectangle):
@@ -20,4 +13,5 @@ class Square(Rectangle):
         super().__init__(self.__size, self.__size)
 
     def __str__(self):
+        """ class print """
         return ("[Square] {}/{}".format(str(self.__size), str(self.__size)))
