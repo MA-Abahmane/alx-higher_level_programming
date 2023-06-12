@@ -1,19 +1,23 @@
 #!/usr/bin/python3
-""" a class BaseGeometry (based on 5-base_geometry.py """
+"""
+more class base
+"""
 
 
 Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square(Rectangle):
-    """ Inside class Square that inherits class Rectangle """
+"""
+Square class
+"""
 
+
+class Square(Rectangle):
+    """ Square Class """
     def __init__(self, size):
-        """ square constructor """
+        """ size init"""
         self.__size = size
         super().__init__(self.__size, self.__size)
-        
+
     def __str__(self):
-        """ Printing function """
         return ("[Square] " + str(self.__size) + "/" + str(self.__size))
-        
