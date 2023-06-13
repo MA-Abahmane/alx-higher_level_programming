@@ -6,7 +6,7 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """ fist, we open the file to read mode and save its lines 
+    """ fist, we open the file to read mode and save its lines
     Args:
         filename (str): given file name
         search_string (str): the string to search for
@@ -19,7 +19,7 @@ def append_after(filename="", search_string="", new_string=""):
 
     new_lns = []
 
-    """ 
+    """
         now we look for the given search string in each line
         if found, add the new string right after that line
     """
