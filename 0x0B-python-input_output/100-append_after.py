@@ -6,7 +6,14 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """ fist, we open the file to read mode and save its lines """
+    """ fist, we open the file to read mode and save its lines 
+    Args:
+        filename (str): given file name
+        search_string (str): the string to search for
+        new_string (str): the string a append is search string is found
+    Returns:
+        None
+    """
     with open(filename, 'r', encoding="utf-8") as fl:
         lns = fl.readlines()
 
