@@ -2,6 +2,7 @@
 """ the first class Base: """
 
 import json as js
+from os import path
 
 
 class Base:
@@ -68,3 +69,40 @@ class Base:
                 dummy = None
 
             return (dummy)
+
+    @classmethod
+    def load_from_file(cls):
+        """ 
+            Used to load string from file and dejonsify
+            return a list of instances 
+        """
+        Fname = f"{cls.__name__}.json"
+        strn = []
+
+        # check is file exists
+        if (not path.isfile(Fname)):
+            return (strn)
+        
+        # reading, updating, dejonsify and saving file content
+        with open(Fname, 'r', encoding='utf-8') as fl:
+
+            for l in cls.from_json_string(fl.read()):
+                strn.append(cls.create(**l))
+
+        return (strn)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ serializes and deserializes in CSV: """
+        from rectangle import Rectangle
+        from square import Square
+    
+        Fname = f'{cls.__name__}.csv'
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ serializes and deserializes in CSV:"""
+        from rectangle import Rectangle
+        from square import Square
+    
+        Fname = f'{cls.__name__}.csv'
