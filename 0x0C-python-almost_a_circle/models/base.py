@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ the first class Base: """
 
+import csv
 import json as js
 from os import path
 
@@ -93,16 +94,88 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """ serializes and deserializes in CSV: """
-        from rectangle import Rectangle
-        from square import Square
-    
+        """ 
+            Used to set all objects of a given instance
+            and save in a list that is in a row of a csv file
+            serializes in CSV:
+        """
+        from models.square import Square
+        from models.rectangle import Rectangle
+
         Fname = f'{cls.__name__}.csv'
+
+        # setting object tribute values
+        if (list_objs is not None):
+            if (cls is Square):
+                list_objs = [[obj.id, obj.size, obj.x, obj.y]
+                            for obj in list_objs]
+
+            else:
+                list_objs = [[obj.id, obj.width, obj.height, obj.x, obj.y]
+                            for obj in list_objs]
+
+        # writhing to csv file
+        with open(Fname, 'w', newline='', encoding='utf-8') as fl:
+            wt = csv.writer(fl)
+            # each object list should be saved in a row 
+            wt.writerows(list_objs)
+
 
     @classmethod
     def load_from_file_csv(cls):
-        """ serializes and deserializes in CSV:"""
-        from rectangle import Rectangle
-        from square import Square
-    
+        """ 
+            Now we read from the csv file each value,
+            convert each to an intiger and set the values to the
+            instance attributes and save all in a dictionary
+            deserializes in CSV:
+        """
+        from models.square import Square
+        from models.rectangle import Rectangle
+
         Fname = f'{cls.__name__}.csv'
+        Finfo = []
+
+        # read from csv file
+        with open(Fname, 'r', newline='', encoding='utf-8') as fl: # type: ignore
+            # read the csv file and get the values of its rows
+            rd = csv.reader(fl)
+            for rw in rd:
+                # convert row values to digits
+                rw = [int(n) for n in rw]
+                # setting values read from file
+                if (cls is Square):
+                    list_objs = {"size": rw[1], "x": rw[2], "y": rw[3], "id": rw[0]}
+
+                else:
+                    list_objs = {"width": rw[1], "height": rw[2], "x": rw[3], "y": rw[4], "id": rw[0]}
+
+                # update/set atributes
+                Finfo.append(cls.create(**list_objs))
+
+        return (Finfo)
+    
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ Turtle Draw """
+        import turtle
+
+        win = turtle.Screen()
+        win.bgcolor("blue")
+
+        for i in list_rectangles + list_squares:
+            x = turtle.Turtle()
+            x.color(100, 100, 100)
+            x.pensize(1)
+            x.pendown()
+            x.setpos(i.x + x.pos()[0], i.x - x.pos()[1])
+            x.pensize(10)
+            x.forward(i.width)
+            x.right(90)
+            x.forward(i.hight)
+            x.right(90)
+            x.forward(i.width)
+            x.right(90)
+            x.forward(i.hight)
+            x.right(90)
+            x.penup()
+            x.end_fill()
