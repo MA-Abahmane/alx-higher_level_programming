@@ -80,7 +80,7 @@ class Rectangle(Base):
     def area(self):
         """ return the area value of the Rectangle instance. """
         return (self.__height * self.__width)
-    
+
     def display(self):
         """ prints in stdout the Rectangle instance with the character # """
         wth = self.__width
@@ -95,7 +95,7 @@ class Rectangle(Base):
             for j in range(wth):
                 print('#', end='')
             print()
-    
+
     def updater(self, id=None, width=None, height=None, x=None, y=None):
         """ update the values of atributes (update method helper) """
         if (width is not None):
@@ -110,7 +110,7 @@ class Rectangle(Base):
             self.id = id
 
     def update(self, *args, **kwargs):
-        """ 
+        """
         assigns an argument to each attribute
         **This method can update variable is 2 ways:
             - args mode (given args)
@@ -123,4 +123,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ returns the dictionary representation of a Rectangle  """
-        return {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
+        return {'id': self.id, 'width': self.width, 'height': self.height,
+                'x': self.x, 'y': self.y}

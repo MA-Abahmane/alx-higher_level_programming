@@ -17,20 +17,20 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ 
+        """
             Used to convert a Python dictionary to a JSON string
             return the JSON string representation of list_dictionaries:
         """
         if(list_dictionaries is None):
             return []
         return (js.dumps(list_dictionaries))
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
-        """ 
+        """
             write the JSON string representation of list_objs to a file
         """
         fl_name = f'{cls.__name__}.json'
@@ -40,13 +40,13 @@ class Base:
             list_objs = [obj.to_dictionary() for obj in list_objs]
 
         with open(fl_name, "w", encoding="utf-8") as fl:
-            fl.write(cls.to_json_string(list_objs)) # type: ignore
-    
+            fl.write(cls.to_json_string(list_objs))  # type: ignore
+
     @staticmethod
     def from_json_string(json_string):
-        """ 
+        """
             Used to convert from JSON string to Python dictionary:
-            return the list of the JSON string representation json_string 
+            return the list of the JSON string representation json_string
         """
         if (json_string is None or not json_string):
             return []
@@ -57,7 +57,7 @@ class Base:
         """ returns an instance with all attributes already set: """
         # Importing modules
         from models.rectangle import Rectangle
-        from models.square  import Square
+        from models.square import Square
 
         if (cls is not None):
             if (cls is Square):
@@ -73,9 +73,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ 
+        """
             Used to load string from file and dejonsify
-            return a list of instances 
+            return a list of instances
         """
         Fname = f"{cls.__name__}.json"
         strn = []
@@ -83,18 +83,18 @@ class Base:
         # check is file exists
         if (not path.isfile(Fname)):
             return (strn)
-        
+
         # reading, updating, dejonsify and saving file content
         with open(Fname, 'r', encoding='utf-8') as fl:
 
-            for l in cls.from_json_string(fl.read()):
-                strn.append(cls.create(**l))
+            for ln in cls.from_json_string(fl.read()):
+                strn.append(cls.create(**ln))
 
         return (strn)
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """ 
+        """
             Used to set all objects of a given instance
             and save in a list that is in a row of a csv file
             serializes in CSV:
@@ -108,22 +108,21 @@ class Base:
         if (list_objs is not None):
             if (cls is Square):
                 list_objs = [[obj.id, obj.size, obj.x, obj.y]
-                            for obj in list_objs]
+                             for obj in list_objs]
 
             else:
                 list_objs = [[obj.id, obj.width, obj.height, obj.x, obj.y]
-                            for obj in list_objs]
+                             for obj in list_objs]
 
         # writhing to csv file
         with open(Fname, 'w', newline='', encoding='utf-8') as fl:
             wt = csv.writer(fl)
-            # each object list should be saved in a row 
+            # each object list should be saved in a row
             wt.writerows(list_objs)
-
 
     @classmethod
     def load_from_file_csv(cls):
-        """ 
+        """
             Now we read from the csv file each value,
             convert each to an intiger and set the values to the
             instance attributes and save all in a dictionary
@@ -136,7 +135,7 @@ class Base:
         Finfo = []
 
         # read from csv file
-        with open(Fname, 'r', newline='', encoding='utf-8') as fl: # type: ignore
+        with open(Fname, 'r', newline='', encoding='utf-8') as fl:
             # read the csv file and get the values of its rows
             rd = csv.reader(fl)
             for rw in rd:
@@ -144,16 +143,18 @@ class Base:
                 rw = [int(n) for n in rw]
                 # setting values read from file
                 if (cls is Square):
-                    list_objs = {"size": rw[1], "x": rw[2], "y": rw[3], "id": rw[0]}
+                    list_objs = {"size": rw[1], "x": rw[2],
+                                 "y": rw[3], "id": rw[0]}
 
                 else:
-                    list_objs = {"width": rw[1], "height": rw[2], "x": rw[3], "y": rw[4], "id": rw[0]}
+                    list_objs = {"width": rw[1], "height": rw[2],
+                                 "x": rw[3], "y": rw[4], "id": rw[0]}
 
                 # update/set atributes
                 Finfo.append(cls.create(**list_objs))
 
         return (Finfo)
-    
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         """ Turtle Draw """

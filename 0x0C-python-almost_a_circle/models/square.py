@@ -25,7 +25,7 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    def updater(self, id=None ,size=None, x=None, y=None):
+    def updater(self, id=None, size=None, x=None, y=None):
         # Update size
         if (size is not None):
             self.size = size
@@ -40,7 +40,7 @@ class Square(Rectangle):
             self.id = id
 
     def update(self, *args, **kwargs):
-        """ 
+        """
         assigns an argument to each attribute
         **This method can update variable is 2 ways:
             - args mode (given args)
