@@ -24,8 +24,8 @@ class Base:
             Used to convert a Python dictionary to a JSON string
             return the JSON string representation of list_dictionaries:
         """
-        if(list_dictionaries is None):
-            return []
+        if (not list_dictionaries or list_dictionaries is None):
+            return "[]"
         return (js.dumps(list_dictionaries))
 
     @classmethod
@@ -48,7 +48,7 @@ class Base:
             Used to convert from JSON string to Python dictionary:
             return the list of the JSON string representation json_string
         """
-        if (json_string is None or not json_string):
+        if (not json_string or json_string is None):
             return []
         return (js.loads(json_string))
 
@@ -59,12 +59,13 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
 
+        # make a dummy instance and update it
         if (cls is not None):
             if (cls is Square):
-                dummy = Square(1, 2, 3, 4)
+                dummy = Square(1, 2)
                 dummy.update(**dictionary)
             elif (cls is Rectangle):
-                dummy = Rectangle(1, 2, 3, 4, 5)
+                dummy = Rectangle(1, 2)
                 dummy.update(**dictionary)
             else:
                 dummy = None
@@ -78,19 +79,19 @@ class Base:
             return a list of instances
         """
         Fname = f"{cls.__name__}.json"
-        strn = []
+        list_objs = []
 
-        # check is file exists
+        # check if file exists
         if (not path.isfile(Fname)):
-            return (strn)
+            return (list_objs)
 
-        # reading, updating, dejonsify and saving file content
+        # read, update, dejonsify and save file content in a list
         with open(Fname, 'r', encoding='utf-8') as fl:
 
-            for ln in cls.from_json_string(fl.read()):
-                strn.append(cls.create(**ln))
+            for dct in cls.from_json_string(fl.read()):
+                list_objs.append(cls.create(**dct))
 
-        return (strn)
+        return (list_objs)
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -143,12 +144,12 @@ class Base:
                 rw = [int(n) for n in rw]
                 # setting values read from file
                 if (cls is Square):
-                    list_objs = {"size": rw[1], "x": rw[2],
-                                 "y": rw[3], "id": rw[0]}
+                    list_objs = {"id": rw[0], "size": rw[1], "x": rw[2],
+                                 "y": rw[3]}
 
                 else:
-                    list_objs = {"width": rw[1], "height": rw[2],
-                                 "x": rw[3], "y": rw[4], "id": rw[0]}
+                    list_objs = {"id": rw[0], "width": rw[1], "height": rw[2],
+                                 "x": rw[3], "y": rw[4]}
 
                 # update/set atributes
                 Finfo.append(cls.create(**list_objs))
