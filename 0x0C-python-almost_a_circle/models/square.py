@@ -26,6 +26,7 @@ class Square(Rectangle):
         self.height = value
 
     def updater(self, id=None, size=None, x=None, y=None):
+        """ update the values of atributes (update method helper) """
         # Update size
         if (size is not None):
             self.size = size
@@ -53,5 +54,4 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """ return the dictionary representation of a Square """
-        return {'id': self.id, 'size': self.size, 'x': self.x, 
-                'y': self.y}
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
