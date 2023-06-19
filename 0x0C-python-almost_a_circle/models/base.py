@@ -69,6 +69,7 @@ class Base:
                 dummy.update(**dictionary)
             else:
                 dummy = None
+                dummy.update(**dictionary) # type: ignore
 
             return (dummy)
 
