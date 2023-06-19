@@ -60,18 +60,17 @@ class Base:
         from models.square import Square
 
         # make a dummy instance and update it
-        if (cls is not None):
-            if (cls is Square):
-                dummy = Square(1, 2)
-                dummy.update(**dictionary)
-            elif (cls is Rectangle):
-                dummy = Rectangle(1, 2)
-                dummy.update(**dictionary)
-            else:
-                dummy = None
-                dummy.update(**dictionary) # type: ignore
+        if (cls is Square):
+            dummy = Square(1)
+            dummy.update(**dictionary)
+        elif (cls is Rectangle):
+            dummy = Rectangle(1, 2)
+            dummy.update(**dictionary)
+        else:
+            dummy = None
+            dummy.update(**dictionary)
 
-            return (dummy)
+        return (dummy)
 
     @classmethod
     def load_from_file(cls):
