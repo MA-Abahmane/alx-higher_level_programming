@@ -68,7 +68,6 @@ class Base:
             dummy.update(**dictionary)
         else:
             dummy = None
-            dummy.update(**dictionary)
 
         return (dummy)
 
@@ -141,7 +140,7 @@ class Base:
             rd = csv.reader(fl)
             for rw in rd:
                 # convert row values to digits
-                rw = [int(n) for n in rw]
+                rw = [int(num) for num in rw]
                 # setting values read from file
                 if (cls is Square):
                     list_objs = {"id": rw[0], "size": rw[1], "x": rw[2],
