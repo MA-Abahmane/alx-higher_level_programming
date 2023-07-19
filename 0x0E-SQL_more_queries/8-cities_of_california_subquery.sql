@@ -3,7 +3,7 @@
 -- select from table
 SELECT `id`, `name` FROM cities 
 
--- set condition
+-- set condition to get the id of 'California'
 WHERE state_id = (SELECT id FROM states WHERE `name` = 'California')
 
 -- order output by id
