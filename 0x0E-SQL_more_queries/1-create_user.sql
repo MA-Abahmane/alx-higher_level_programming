@@ -4,5 +4,7 @@
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
 
 -- set user to own all privileges on your MySQL server
-
 GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
+
+-- restart and load changes
+FLUSH PRIVILEGES;
