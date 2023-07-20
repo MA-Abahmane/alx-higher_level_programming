@@ -6,14 +6,18 @@ CREATE TABLE IF NOT EXISTS genres(
 );
 
 INSERT INTO genres VALUES 
-    ("Drama", 150), 
-    ("Comedy", 92), 
-    ("Adventure", 79), 
-    ("Fantasy", 79),
-    ("Mystery", 45), 
-    ("Crime", 40), 
-    ("Suspense", 40), 
-    ("Thriller", 40);
+    ("Drama", 3954), 
+    ("Comedy", 2898), 
+    ("Adventure", 1765), 
+    ("Crime", 1196),
+    ("Action", 937), 
+    ("Fantasy", 828),
+    ("Mystery", 932), 
+    ("Crime", 40),
+    ("Horror", 653), 
+    ("Suspense", 586), 
+    ("Thriller", 586),
+    ("Romance", 303);
 
 SELECT `name`, `rate` AS `rating` FROM genres
 ORDER BY `rate` DESC;
