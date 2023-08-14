@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* a script that searches the second biggest integer in the list of arguments.*/
+/* a script that searches the second biggest integer in the list of arguments. */
 
 /*
   'process.argv' is an array in Node.js that contains the

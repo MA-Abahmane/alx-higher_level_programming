@@ -11,7 +11,7 @@ const args = process.argv.slice(2);
 a = parseInt(args[0]);
 
 function add(a) {
-    var result, n = 1;
+    let result, n = 1;
 
     if (!isNaN(a)) {
         result = add(a + result);
