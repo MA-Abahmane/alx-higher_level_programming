@@ -1,7 +1,7 @@
 #!/usr/bin/node
 /* a script that imports an array and computes a new array */
 
-let list = require('./100-data.js').list;
+const list = require('./100-data.js').list;
 console.log(list);
 
 /** each value equal to the value of the initial list, multipled by the index in the list */
