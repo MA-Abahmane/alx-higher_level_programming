@@ -3,7 +3,7 @@
 
 const dict = require('./101-data.js').dict;
 
-newDict = {};
+const newDict = {};
 
 /** for each key get its value and save it in 'newKey' */
 for (const key in dict) {

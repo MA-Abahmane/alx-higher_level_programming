@@ -22,9 +22,8 @@ const F3 = args[2];
 const F1Data = fs.readFileSync(F1, 'utf8');
 const F2Data = fs.readFileSync(F2, 'utf8');
 
-/** fuse the data from both files*/
-fusionData = F1Data + F2Data;
+/** fuse the data from both files */
+const fusionData = F1Data + F2Data;
 
 /** write data to the third file */
 fs.writeFileSync(F3, fusionData, 'utf8');
-
