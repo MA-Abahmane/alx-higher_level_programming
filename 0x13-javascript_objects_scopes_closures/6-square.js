@@ -1,16 +1,16 @@
 #!/usr/bin/node
 /* a class Square that defines a square and inherits from Rectangle of 4-rectangle.js: */
 
-const Rectangle = require('./4-rectangle');
+const oldSquare = require('./5-square');
 
-class Square extends Rectangle {
+class Square extends oldSquare {
   constructor (size) {
     super(size, size);
   }
 
   /* an instance method called charPrint(c) that prints the rectangle using the character c */
   charPrint (c) {
-    if (c === undefined) {
+    if (!c) {
       c = 'X';
     }
 
