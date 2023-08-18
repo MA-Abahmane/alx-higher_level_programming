@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-""" a script that lists all states from the database hbtn_0e_0_usa: """
+""" 
+    a script that lists all states from the database hbtn_0e_0_usa:
+    The script takes 3 arguments: mysql username, mysql password
+    and database name (no argument validation needed).
+"""
 
 import sys
 import MySQLdb as DB
