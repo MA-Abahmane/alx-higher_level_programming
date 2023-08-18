@@ -14,6 +14,6 @@ if __name__ == '__main__':
     toSeach = sys.argv[4]
 
     crs = storage.cursor()
-    crs.execute("SELECT * FROM `states` WHERE `name` = %s \
-                ORDER BY `id` ASC", (toSeach,))
+    crs.execute(("SELECT * FROM `states` WHERE `name` = %s"
+                "ORDER BY `id` ASC"), (toSeach,))
     [print(state) for state in crs.fetchall()]
