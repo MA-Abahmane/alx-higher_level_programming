@@ -4,14 +4,14 @@
     database hbtn_0e_6_usa
 """
 
-from sys import argv
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from relationship_city import Base, City
-from relationship_state import Base, State
-
 
 if __name__ == "__main__":
+    from sys import argv
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import sessionmaker
+    from relationship_city import Base, City
+    from relationship_state import Base, State
+
     """ Creat connection """
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(argv[1], argv[2], argv[3]),
