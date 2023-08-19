@@ -18,7 +18,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
 
     """
-        Create the database tables that correspond to the SQLAlchemy
+        create the database tables that correspond to the SQLAlchemy
         model classes defined using the declarative base pattern.
     """
     Base.metadata.create_all(engine)
