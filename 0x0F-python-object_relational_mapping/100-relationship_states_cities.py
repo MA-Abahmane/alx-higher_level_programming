@@ -11,7 +11,6 @@ from relationship_city import Base, City
 from relationship_state import Base, State
 
 
-
 if __name__ == "__main__":
     """ Creat connection """
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
