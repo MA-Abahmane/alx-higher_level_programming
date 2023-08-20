@@ -14,4 +14,6 @@ if __name__ == '__main__':
 
     crs = storage.cursor()
     crs.execute("SELECT * FROM `states` ORDER BY `id` ASC")
-    [print(state) for state in crs.fetchall()]
+    states = crs.fetchall()
+    for state in states:
+        print(state)
