@@ -19,6 +19,6 @@ def find_peak(list_of_integers):
         return (4)
 
     for i in range(1, len(lst) - 1):
-            n = lst[i]
-            if (lst[i - 1] <= n and n >= lst[i + 1]):
-                return (n)
+        n = lst[i]
+        if (lst[i - 1] <= n and n >= lst[i + 1]):
+            return (n)
