@@ -13,5 +13,5 @@ if __name__ == '__main__':
 
     crs = storage.cursor()
     crs.execute("SELECT * FROM `states` WHERE name LIKE 'N%' \
-                ORDER BY `id` ASC")
+                ORDER BY states.id ASC")
     [print(state) for state in crs.fetchall() if (state[1][0] == 'N')]
