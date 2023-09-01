@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
     Python script that fetches https://alx-intranet.hbtn.io/status
+    The body of the response is displayed
 """
 
 from urllib.request import urlopen, Request
