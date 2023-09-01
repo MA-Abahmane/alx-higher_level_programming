@@ -23,11 +23,7 @@ if __name__ == "__main__":
 
     # Displaying commit information
     cmtNum = 10
-    try:
-        for idx in range(cmtNum):
-            cmtCode = commits[idx].get('sha')
-            usrName = commits[idx].get('commit').get('author').get('name')
-            print(f"{cmtCode}: {usrName}")
-
-    except Exception:
-        pass
+    for idx in range(cmtNum):
+        cmtCode = commits[idx].get('sha')
+        usrName = commits[idx].get('commit').get('author').get('name')
+        print(f"{cmtCode}: {usrName}")
