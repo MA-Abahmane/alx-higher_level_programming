@@ -11,7 +11,7 @@ import urllib.error
 
 
 if __name__ == "__main__":
-    """ displays the value of the X-Request-Id variable """
+    """ sends a request to the URL """
 
     url = argv[1]
 

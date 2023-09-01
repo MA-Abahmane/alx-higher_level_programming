@@ -12,7 +12,7 @@ import urllib.parse as parse
 
 
 if __name__ == "__main__":
-    """ displays the value of the X-Request-Id variable """
+    """ sends a POST request to the passed URL """
 
     url = argv[1]
     dic = {'email': argv[2]}

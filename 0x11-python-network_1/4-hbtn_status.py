@@ -13,4 +13,5 @@ if __name__ == "__main__":
 
     response = req.get(url)
 
-    print(response.text)
+    print('Body response:')
+    print(f'\t- type: {type(response.text)}\n\t- content: {response.text}')

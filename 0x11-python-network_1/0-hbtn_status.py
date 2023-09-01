@@ -3,7 +3,7 @@
     Python script that fetches https://alx-intranet.hbtn.io/status
 """
 
-import urllib.request as request
+from urllib.request import urlopen, Request
 
 
 if __name__ == "__main__":
@@ -11,6 +11,7 @@ if __name__ == "__main__":
 
     url = 'https://alx-intranet.hbtn.io/status'
 
-    with request.urlopen(url) as response:
+    with urlopen(url) as response:
         details = response.read()
-        print(details)
+        print('Body response:')
+        print(f'\t- type: {type(details)}\n\t- content: {details}\n\t- utf8 content: {details.decode("utf-8")}')

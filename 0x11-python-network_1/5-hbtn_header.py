@@ -10,10 +10,11 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    """ fetches https://alx-intranet.hbtn.io/status """
+    """ sends a request to the URL and displays the value of X-Request-Id """
 
     url = argv[1]
 
     response = req.get(url)
+    value = response.headers.get('X-Request-Id')
 
-    print(response.text)
+    print(value)

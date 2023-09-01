@@ -11,11 +11,11 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    """ fetches https://alx-intranet.hbtn.io/status """
+    """ sends a POST request to the passed URL """
 
     url = argv[1]
     email = argv[2]
 
-    response = req.get(url, data={'email': email})
+    response = req.post(url, data={"email": email})
 
     print(response.text)
