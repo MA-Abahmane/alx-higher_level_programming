@@ -13,7 +13,7 @@ if __name__ == "__main__":
     """ Takes GitHub credentials & uses the GitHub API to display your id """
 
     # Constructing the GitHub API URL
-    url = f"https://api.github.com/repos/{argv[1]}/{argv[2]}/commits"
+    url = f"https://api.github.com/repos/{argv[2]}/{argv[1]}/commits"
 
     # Send a GET request to the GitHub API
     request = req.get(url)
