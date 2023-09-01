@@ -12,8 +12,10 @@ import requests as req
 if __name__ == "__main__":
     """ Takes GitHub credentials & uses the GitHub API to display your id """
 
+    repo, user = argv[1], argv[2]
+    
     # Constructing the GitHub API URL
-    url = f"https://api.github.com/repos/{argv[2]}/{argv[1]}/commits"
+    url = f"https://api.github.com/repos/{user}/{repo}/commits"
 
     # Send a GET request to the GitHub API
     request = req.get(url)
@@ -23,7 +25,11 @@ if __name__ == "__main__":
 
     # Displaying commit information
     cmtNum = 10
-    for idx in range(cmtNum):
-        cmtCode = commits[idx].get('sha')
-        usrName = commits[idx].get('commit').get('author').get('name')
-        print(f"{cmtCode}: {usrName}")
+    try:
+        for idx in range(cmtNum):
+            cmtCode = commits[idx].get('sha')
+            usrName = commits[idx].get('commit').get('author').get('name')
+            print(f"{cmtCode}: {usrName}")
+    # pass on error
+    except Exception:
+        pass
