@@ -15,5 +15,5 @@ if __name__ == "__main__":
     with urlopen(req) as response:
         details = response.read()
         print('Body response:')
-        print(f"\t- type: {type(details)}\n\t- content: {details}\
-              \n\t- utf8 content: {details.decode('utf-8')}")
+        print(f"\t- type: {type(details)}\n\t- content: {details}")
+        print(f"\t- utf8 content: {details.decode('utf-8')}")
