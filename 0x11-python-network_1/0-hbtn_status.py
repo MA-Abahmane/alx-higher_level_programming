@@ -15,4 +15,4 @@ if __name__ == "__main__":
         details = response.read()
         print('Body response:')
         print(f"\t- type: {type(details)}\n\t- content: {details}\
-              \n\t- utf8 content: {details.decode("utf-8")}")
+              \n\t- utf8 content: {details.decode('utf-8')}")
