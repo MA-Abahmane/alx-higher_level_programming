@@ -10,7 +10,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    """ POST request to http://0.0.0.0:5000/search_user with the letter as a parameter. """
+    """ POST request to http://0.0.0.0:5000/search_user with the letter """
 
     url = 'http://0.0.0.0:5000/search_user'
 
@@ -22,7 +22,8 @@ if __name__ == "__main__":
     response = req.post(url, data=letter)
 
     # Check if the response body is properly JSON formatted and not empty
-    if response.headers.get('content-type') == 'application/json' and response.json():
+    if response.headers.get('content-type') == 'application/json'\
+            and response.json():
         # Display the id and name; [<id>] <name>
         data = response.json()
         id_ = data.get('id')
