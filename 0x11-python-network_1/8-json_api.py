@@ -32,7 +32,7 @@ if __name__ == "__main__":
         print(f"[{id_}] {name_}")
     # Display No result if the JSON is empty
     elif response.headers.get('content-type') == 'application/json':
-        print("JSON is empty")
+        print("No result")
     # Display Not a valid JSON if the JSON is invalid
     else:
         print("Not a valid JSON")
