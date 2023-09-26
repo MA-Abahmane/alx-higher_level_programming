@@ -7,6 +7,6 @@ const URL = process.argv[2];
 
 // GET request to a given URL and take in the response
 request.get(URL).on('response', function (response) {
-    // from the response get the status code and print
-    console.log(`code: ${response.statusCode}`);
+  // from the response get the status code and print
+  console.log(`code: ${response.statusCode}`);
 });
