@@ -11,6 +11,8 @@ const URL = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
 // Create a GET request to fetch the contents of the page
 request(URL, function (error, response, body) {
   // if no errors and the request was OK; start process
+  body = JSON.parse(body);
+
   if (!error) {
     console.log('Luke Skywalker');
     console.log('C-3PO');
