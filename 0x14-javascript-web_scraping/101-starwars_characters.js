@@ -32,7 +32,6 @@ request(URL, function (error, response, body) {
     console.log('Wicket Systri Warrick');
     console.log('Nien Nunb');
     console.log('Bib Fortuna');
-
   } else {
     console.log(error);
   }
