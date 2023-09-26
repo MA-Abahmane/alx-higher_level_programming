@@ -15,5 +15,5 @@ request(URL, function (error, response, body) {
     return;
   }
   // if no error encountered; return the value of title after parsing JSON string
-  console.log(JSON.parse(body));
+  console.log(JSON.parse(body).title);
 });
