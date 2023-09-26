@@ -13,11 +13,18 @@ request(URL, function (error, response, body) {
   // if no errors and the request was OK; start process
   if (!error) {
     let i;
-    const charactersList = JSON.parse(body);
+    // get the character links list
+    const charactersList = JSON.parse(body).characters;
 
+    // loop through the character list
     for (i = 0; i < charactersList.length; i++) {
       request(charactersList[i], function (error, response, Body) {
-        console.log(JSON.parse(Body).name);
+        // print each characters name
+        if (!error) {
+          console.log(JSON.parse(Body).name);
+        } else {
+          console.log(error);
+        }
       });
     }
   } else {
