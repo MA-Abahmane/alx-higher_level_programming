@@ -17,6 +17,7 @@ request(URL, function (error, response, body) {
     // Print the count of caracters found
     console.log(films.reduce((count, movie) => {
       return movie.characters.find((character) => character.endsWith('/18/'))
+        // if a character with id == 18 is found, increment count by one;
         ? count + 1
         : count;
     }, 0));
