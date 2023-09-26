@@ -31,7 +31,7 @@ request(URL, function (error, response, body) {
     // set all values in a dictionary style
     const values = `{${Object.entries(list).map(([key, value]) => ` '${key}': ${value}`).join(',\n ')} }`;
 
-    // print object as is if list lenght is less than 3
+    // print object as is if list length is less than 3
     console.log(Object.keys(list).length > 2 ? values : list);
   } else {
     // print error
