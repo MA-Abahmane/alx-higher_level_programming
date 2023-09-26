@@ -11,30 +11,34 @@ const URL = process.argv[2];
 // Create a GET request to fetch the contents of the page
 request(URL, function (error, response, body) {
   // if no errors and the request was OK; start process
-  if (!error && response.statusCode === 200) {
-    const todoList = JSON.parse(body);
-    const list = {};
+  if (!error) {
+    let i;
+    const completedList = {};
 
-    // search for id with completed tasks and ids completed tasks
-    // loop trough the todo list looking for completed tasks
-    todoList.forEach((todo) => {
-      // if task is completed add 1 to user completes
-      if (todo.completed) {
-        if (list[todo.userId] === undefined) {
-          list[todo.userId] = 1;
-        } else {
-          list[todo.userId] += 1;
+    body = JSON.parse(body);
+
+    for (i = 0; i < body.length; i++) {
+        // get the id and completed list of each user
+        const userId = body[i].userId;
+        const completed = body[i].completed;
+
+        // count his completes
+        if (completed)
+        {
+            if (!completedList[userId]) {
+                completedList[userId] = 1;
+            } else {
+                completedList[userId] += 1;
+            }
         }
-      }
-    });
+    }
 
-    // set all values in a dictionary style
-    const values = `{${Object.entries(list).map(([key, value]) => ` '${key}': ${value}`).join(',\n ')} }`;
+    // print results
+    console.log(completedList);
 
-    // print object as is if list length is less than 3
-    console.log(Object.keys(list).length > 2 ? values : list);
-  } else {
-    // print error
-    console.log(error);
-  }
+
+    } else {
+        // print error
+        console.log(error);
+    }
 });
