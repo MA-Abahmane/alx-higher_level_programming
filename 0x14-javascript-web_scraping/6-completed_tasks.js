@@ -11,7 +11,7 @@ const URL = process.argv[2];
 // Create a GET request to fetch the contents of the page
 request(URL, function (error, response, body) {
   // if no errors and the request was OK; start process
-  if (!error) {
+  if (!error && response.statusCode === 200) {
     const todoList = JSON.parse(body);
     const list = {};
 
