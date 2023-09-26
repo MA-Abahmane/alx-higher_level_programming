@@ -11,16 +11,14 @@ const URL = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
 // Create a GET request to fetch the contents of the page
 request(URL, function (error, response, body) {
   // if no errors and the request was OK; start process
-    if (!error) {
-        let i;
-        const charactersList = JSON.parse(body);
+  if (!error) {
+    let i;
+    const charactersList = JSON.parse(body);
 
-        for (i = 0; i < charactersList.length; i++) {
-            request(charactersList[i], function (error, response, Body) {
-                console.log(JSON.parse(Body).name);
-            });
-        }
-
+    for (i = 0; i < charactersList.length; i++) {
+      request(charactersList[i], function (error, response, Body) {
+        console.log(JSON.parse(Body).name);
+      });
     }
-
+  }
 });

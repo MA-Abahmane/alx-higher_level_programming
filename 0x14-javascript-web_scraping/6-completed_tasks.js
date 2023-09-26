@@ -18,27 +18,24 @@ request(URL, function (error, response, body) {
     body = JSON.parse(body);
 
     for (i = 0; i < body.length; i++) {
-        // get the id and completed list of each user
-        const userId = body[i].userId;
-        const completed = body[i].completed;
+      // get the id and completed list of each user
+      const userId = body[i].userId;
+      const completed = body[i].completed;
 
-        // count his completes
-        if (completed)
-        {
-            if (!completedList[userId]) {
-                completedList[userId] = 1;
-            } else {
-                completedList[userId] += 1;
-            }
+      // count his completes
+      if (completed) {
+        if (!completedList[userId]) {
+          completedList[userId] = 1;
+        } else {
+          completedList[userId] += 1;
         }
+      }
     }
 
     // print results
     console.log(completedList);
-
-
-    } else {
-        // print error
-        console.log(error);
-    }
+  } else {
+    // print error
+    console.log(error);
+  }
 });
