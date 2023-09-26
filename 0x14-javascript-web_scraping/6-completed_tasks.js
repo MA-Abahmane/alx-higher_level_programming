@@ -15,19 +15,20 @@ request(URL, function (error, response, body) {
     let i;
     const completedList = {};
 
+    // parce the response
     body = JSON.parse(body);
 
     for (i = 0; i < body.length; i++) {
       // get the id and completed list of each user
-      const userId = body[i].userId;
-      const completed = body[i].completed;
+      const ID = body[i].userId;
+      const tasksDone = body[i].completed;
 
       // count his completes
-      if (completed) {
-        if (!completedList[userId]) {
-          completedList[userId] = 1;
+      if (tasksDone) {
+        if (!completedList[ID]) {
+          completedList[ID] = 1;
         } else {
-          completedList[userId] += 1;
+          completedList[ID] += 1;
         }
       }
     }

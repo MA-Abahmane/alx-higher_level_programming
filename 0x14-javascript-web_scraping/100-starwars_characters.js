@@ -20,5 +20,8 @@ request(URL, function (error, response, body) {
         console.log(JSON.parse(Body).name);
       });
     }
+  } else {
+    console.log(error);
   }
+
 });
