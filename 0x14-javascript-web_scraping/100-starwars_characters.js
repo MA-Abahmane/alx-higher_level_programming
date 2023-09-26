@@ -23,5 +23,4 @@ request(URL, function (error, response, body) {
   } else {
     console.log(error);
   }
-
 });

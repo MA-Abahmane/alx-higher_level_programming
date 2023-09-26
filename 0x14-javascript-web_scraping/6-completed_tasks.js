@@ -1,7 +1,6 @@
 #!/usr/bin/node
-/** a script that gets the contents of a webpage and stores it in a file. */
+/** A script that computes the number of tasks completed by user id. */
 
-// import the fs module specialized in file manipulation and
 // the request module specialized in making HTTP requests
 const request = require('request');
 
