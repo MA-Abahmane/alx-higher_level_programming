@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Mandatory
+i=0
+
+while [[ i -lt 11 ]]
+do
+    touch "${i}-script.js"
+    touch "${i}-main.html"
+    ((i++))
+done
+
+
+# Advanced
+i=101
+
+while [[ i -lt 105 ]]
+do
+    touch "${i}-script.js"
+    touch "${i}-main.html"
+    ((i++))
+done
